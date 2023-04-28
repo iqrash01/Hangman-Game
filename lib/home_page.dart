@@ -15,3 +15,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
         title: Text('Hangman'),
+    ),
+    body: Center(
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    Text(
+    'Number of words: $_numWords',
+    style: TextStyle(fontSize: 20),
+    ),
+    Slider(
+    value: _numWords.toDouble(),
+    min: 1,
+    max: 10,
+    divisions: 9,
+    onChanged: (double value) {
+    setState(() {
+    _numWords = value.toInt();
