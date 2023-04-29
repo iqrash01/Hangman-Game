@@ -32,3 +32,41 @@ class _HomePageState extends State<HomePage> {
     onChanged: (double value) {
     setState(() {
     _numWords = value.toInt();
+    });
+    },
+    ),
+      Text(
+        'Number of tries: $_numTries',
+        style: TextStyle(fontSize: 20),
+      ),
+      Slider(
+        value: _numTries.toDouble(),
+        min: 1,
+        max: 10,
+        onChanged: (double value) {
+          setState(() {
+            _numTries = value.toInt();
+          });
+        },
+      ),
+      SizedBox(height: 20),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => GamePage(
+                numWords: _numWords,
+                numTries: _numTries,
+              ),
+            ),
+          );
+        },
+        child: Text('Start Game'),
+      ),
+    ],
+    ),
+    ),
+    );
+  }
+}
