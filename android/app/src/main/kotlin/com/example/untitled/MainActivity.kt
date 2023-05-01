@@ -1,4 +1,4 @@
-package com.example.hangman_game
+package com.example.untitled
 
 import io.flutter.embedding.android.FlutterActivity
 
